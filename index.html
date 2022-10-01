@@ -5,8 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Quiz</title>
+    <link href="./assets/scripts.js">
+    <link href="./assets/styles.css">
+
 </head>
 <body>
+    <header>
+        <a id="leaderboard">View Highscores</a>
+        <time> Time: <span id="time"></span></time>
+    </header>
+
+    <main>
+        <div id="start-card" class="card">
+            <h2 id="title">Javascript Coding Quiz</h2>
+            <p>Answer the questions within the time limit.</p>
+            <p>Your time will be deducted by 10 seconds when you answer incorrectly.</p>
+            <button id="start-btn" class="strt-btn">Start Quiz</button>
+        </div>
+
+        <div hidden id="question-card" class="q-card">
+            <h2 id="question-text"></h2>
+
+            <div id="quiz-options">
+                <button id="option1" class="button option-button"></button>
+                <button id="option2" class="button option-button"></button>
+                <button id="option3" class="button option-button"></button>
+                <button id="option4" class="button option-button"></button>
+            </div>
+
+            <div id="reuslt-div">
+                <hr>
+                <p id="result-text"></p>
+            </div>
+
+        </div>
+
+        <div hidden id="score-card" class="card">
+            <h2>All done!</h2>
+            <p>Your final score is <span id="score"></span>.</p>
+            <form class="inline-form" id="submission-form">
+                <label for="initials">Enter Initials: </label>
+            </form>
+
+        </div>
+    </main>
     
 </body>
 </html>
