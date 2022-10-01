@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed Quiz</title>
-    <link href="./assets/js/scripts.js">
     <link href="./assets/css/styles.css">
 
 </head>
@@ -45,10 +44,21 @@
             <p>Your final score is <span id="score"></span>.</p>
             <form class="inline-form" id="submission-form">
                 <label for="initials">Enter Initials: </label>
+                <input type="text" id="initials">
+                <button id="submit-btn" class="button">Submit</button>
             </form>
-
         </div>
+
+        <div hidden id="leaderboard-card" class="card">
+            <h2>Highscores</h2>
+            <ol id="highscore-list"></ol>
+            <div class="inline-btns">
+                <button id="back-btn" class="button">Restart</button>
+                <button id="clear-btn" class="button">Clear Highscores</button>
+            </div>
+        </div>
+
     </main>
-    
+    <script src="./assets/js/scripts.js"></script>
 </body>
 </html>
