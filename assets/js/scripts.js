@@ -34,5 +34,75 @@ const questions = [
         options: ["1. -", "2. *", "3. =", "4. X"],
         answer: "3. =",
     },
+];
 
-]
+const leaderboardCard = document.querySelector("#leaderboard-card");
+const startCard = document.querySelector("#start-card");
+const questionCard = document.querySelector("#question-card");
+const scoreCard = document.querySelector("#score-card");
+
+function hideCards() {
+    leaderboardCard.setAttribute("hidden", true);
+    startCard.setAttribute("hidden", true);
+    questionCard.setAttribute("hidden", true);
+    scoreCard.setAttribute("hidden", true);
+}
+
+const resultDiv = document.querySelector("#result-div");
+const resultText = document.querySelector("#result-text");
+
+function hideResultText() {
+    resultDiv.getElementsByClassName.display = "none";
+}
+
+var intervalID;
+var time;
+var currentQuestion;
+
+document.querySelector("#start-btn").addEventListener("click", startQuiz);
+
+function startQuiz() {
+    hideCards();
+    questionCard.removeAttribute("hidden");
+    currentQuestion = 0;
+    displayQuestion();
+    
+    time = questions.length * 10;
+
+    intervalID = setInterval(countdown, 1000);
+    displayTime();
+}
+
+function countdown() {
+    time--;
+    displayTime();
+    if (time < 1) {
+        endQuiz();
+    }
+}
+
+const timeDisplay = document.querySelector("#time");
+function displayTime() {
+    timeDisplay.textContent = time;
+}
+
+function displayQuestion() {
+    let question = questions[currentQuestion];
+    let options = question.options;
+
+    let h2QuestionElement = document.querySelector("#question-txt");
+    h2QuestionElement.textContent = question.questionText;
+
+    for (let i = 0; i < options.length; i++) {
+        let option = options[i]
+        let optionButton = document.querySelector("#option" + i);
+        optionButton.textContent = option;
+    }
+}
+
+document.querySelector("#quiz-options").addEventListener("click", checkAnswer);
+
+function optionIsCorrect(optionButton) {
+    return optionButton.textContent === questions[currentQuestion].answer;
+}
+
