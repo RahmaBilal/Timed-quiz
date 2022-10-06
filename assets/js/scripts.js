@@ -200,3 +200,31 @@ function getLeaderboard() {
     }
     return leaderboardArray;
 }
+
+function renderLeaderboard() {
+    let storedLeaderboardArray = sortLeaderboard();
+    const highscoreList = document.querySelector("#highscore-list");
+    highscoreList.innerHTML = "";
+    for (let i = 0; i < sortLeaderboardArray.length; i++) {
+        let leaderboardEntry = sortLeaderboardArray[i];
+        let newListItem = document.createElement("li");
+        newListItem.textContent = leaderboardEntry.initials + "-" + leaderboardEntry.score;
+        highscoreList.append(newListItem);
+    }
+}
+
+function sortLeaderboard() {
+    let leaderboardArray = getLeaderboard();
+    if (!leaderboardArray) {
+        return;
+    }
+
+    leaderboardArray.sort(function (a, b) {
+        return b.score - a.score;
+    })
+    return leaderboardArray;
+}
+
+const clearButton = document.querySelector("#clear-btn");
+clearButton.addEventListener("click", clearHighscores);
+
