@@ -228,3 +228,23 @@ function sortLeaderboard() {
 const clearButton = document.querySelector("#clear-btn");
 clearButton.addEventListener("click", clearHighscores);
 
+function clearHighscores() {
+    localStorage.clear();
+    renderLeaderboard();
+}
+
+const backButton = document.querySelector("#back-btn");
+backButton.addEventListener("click", returnToStart);
+
+function returnToStart() {
+    hideCards();
+    startCard.removeAttribute("hidden");
+}
+
+const leaderboardLink = document.querySelector("#leaderboard-link");
+leaderboardLink.addEventListener("click", showLeaderboard);
+
+function showLeaderboard() {
+    hideCards():
+    leaderboardCard.removeAttribute("hidden");
+}
