@@ -1,98 +1,106 @@
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #ffff;
-    margin: 0px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    background-color: aquamarine;
-    color: #ffff;
-    padding: 3vh;
-}
-
-time {
-    min-width: 85px;
-}
-
-main {
-    display: flex;
+:root {
+    --dark-sea-green: #84a98cff;
+    --dark-slate-gray: #354f52ff;
+    --charcoal: #2f3e46ff;
+    --hookers-green: #52796fff;
+     --ash-gray: rgb(214, 216, 213);
+  }
+  
+  header {
+    background-color: var(--dark-slate-gray);
+    text-align: end;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgb(13, 86, 0);
+    padding: 20px;
+  }
+  
+  body {
+    background-color: var(--ash-gray);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  main {
     align-items: center;
-    justify-content: center;
-}
-
-.button {
-    display: block;
-    color: #ffff;
-    background-color: aquamarine;
-    padding: 2vh;
-    border-radius: 8px;
-    border: none;
-}
-
-.inline-btns {
-    display: inline-flex;
-}
-
-.card {
-    max-width: 80%;
-    margin-top: 15vh;
-    border: solid;
-    border-width: 2px;
-    padding: 5vw;
-    border-radius: 30px;
-    border-color: antiquewhite;
-    box-shadow: 10px 5px 5px antiquewhite;
-}
-
-#start-screen {
-    display: inline;
-    text-align: center;
-}
-
-.option-button {
-    width: 100%;
-    text-align: left;
-    margin: 5px;
-}
-
-#result-div {
+  }
+  
+  section,
+  .section {
     display: none;
-}
-
-.inline-form {
-    display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  section {
+    display: none;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+    max-width: 768px;
+    margin: 20px;
+    gap: 20px;
     align-items: center;
-}
+    padding: 50px;
+  }
+  
+  section.active,
+  .section.active {
+    display: flex;
+  }
+  
+  .remaining-time {
+    display: none;
+  }
+  
+  .remaining-time.js-is-counting {
+    display: flex;
+  }
+  
 
-#initials {
-    width: 25%;
-    margin: 8px;
-    padding: 1vh;
-}
+  
+  .button {
+    --border-radius: 9px;
+    background-color: var (var(--dark-sea-green));
+    color: black;
+    border-radius: var(--dark-sea-green);
+    padding: 10px;
+  }
+  
 
-#back-btn {
-    margin-right: 8px;
-}
-
-.highscore-list {
-    padding-inline-start: 20px;
-}
-
-@media screen and (min-width: 850px) {
-    .card {
-        max-width: 680px;
-    }
-}
-
-@media (hover) {
-    a:hover {
-        color:bisque
-    }
-
-    button:hover {
-        background-color: blue;
-    }
-}
+  
+  .questions-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 5px;
+    padding-left: 0;
+    width: 100%;
+  }
+  
+  .questions-list input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    clip: 0;
+  }
+  
+  .questions-list span {
+    padding: 10px;
+    background-color: var(--hookers-green);
+    border-radius: 10px;
+    width: 100%;
+    color: black;
+  }
+  
+  .questions-list label {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+  
+  .questions-list input:is(:checked) + span {
+    background: var(--charcoal);
+  }
+  
+  .initials input {
+    margin-left: 10px;
+  }
