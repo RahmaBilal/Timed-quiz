@@ -1,16 +1,15 @@
 :root {
-    --dark-sea-green: #84a98cff;
+    --burlywood: #ddb892ff;
     --dark-slate-gray: #354f52ff;
     --charcoal: #2f3e46ff;
     --hookers-green: #52796fff;
-     --ash-gray: rgb(214, 216, 213);
+    --timberwolf: #dad7cdff;
   }
   
   header {
-    background-color: var(--dark-slate-gray);
-    text-align: end;
+    background-color: var(--timberwolf);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: 1px solid rgb(13, 86, 0);
+    border: 1px solid rgb(0, 0, 0);
     padding: 20px;
   }
   
@@ -58,9 +57,9 @@
   
   .button {
     --border-radius: 9px;
-    background-color: var (var(--dark-sea-green));
+    background-color: var (var(--burlywood));
     color: black;
-    border-radius: var(--dark-sea-green);
+    border-radius: var(--burlywood);
     padding: 10px;
   }
   
@@ -85,7 +84,7 @@
   
   .questions-list span {
     padding: 10px;
-    background-color: var(--hookers-green);
+    background-color: var(--burlywood);
     border-radius: 10px;
     width: 100%;
     color: black;
@@ -98,7 +97,7 @@
   }
   
   .questions-list input:is(:checked) + span {
-    background: var(--charcoal);
+    background: var(--burlywood);
   }
   
   .initials input {
