@@ -81,3 +81,25 @@ class Timer {
       .classList.remove("js-is-counting");
   }
 }
+
+class Game {
+  constructor() {
+    this.answers = {};
+    this.timer = null;
+    this.question = 0;
+    this.score = 0;
+    this.remainingTime = 0;
+    this.timerElement = document.querySelector("#time-remaining");
+  }
+
+  startQuiz(timer, random) {
+    this.question = 0;
+    this.generateQuestions(random);
+    this.timer = new Timer(timer ? timer : 60, this);
+
+    this.timer.start();
+    this.score = 0;
+
+    document.querySelector("#intro").classList.remove("active");
+    document.querySelector("#questions-section").classList.add("active");
+  }
