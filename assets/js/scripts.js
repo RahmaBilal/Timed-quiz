@@ -136,3 +136,32 @@ class Game {
 
     this.addEvents();
   }
+  generateInputScreen(score) {
+    let template = `<h1>Complete</h1>
+              <p>Final score: ${score ? score : 0}</p>
+              <form id="js-highscore-submit" name="highscore-submit">
+                  <input type="hidden" name="score" value="${score}"">
+                  <label>Enter initials: <input type="text" name="initials" maxlength="3"></label>
+                  <button type="submit">Submit</submit>
+              </form>`;
+    document.querySelector("#highscore-input").innerHTML = template;
+
+    (() => {
+      // add event listeners to form
+      const form = document.getElementById("js-highscore-submit");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let formData = new FormData(event.target);
+
+        if (formData.get("initials").length > 0) {
+          HighScores.addScore(formData.get("initials"), score);
+          document.querySelector("#highscore-input").classList.remove("active");
+          HighScores.viewHighScores();
+        } else {
+          alert("invalid initials");
+        }
+      });
+    })();
+  }
