@@ -28,6 +28,18 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Screenshots
 
+<img width="1440" alt="Screenshot 2022-11-30 at 10 13 14" src="https://user-images.githubusercontent.com/108250116/204782893-ffe00f0e-9663-4009-9c6a-6177befc1b17.png">
+
+<img width="1440" alt="Screenshot 2022-11-30 at 10 13 22" src="https://user-images.githubusercontent.com/108250116/204782910-7b52db2e-d44a-4b16-a5e3-cdb78573845d.png">
+
+<img width="1440" alt="Screenshot 2022-11-30 at 10 13 27" src="https://user-images.githubusercontent.com/108250116/204782931-aa3431b1-c33a-4c63-8f0c-415b088f311d.png">
+
+<img width="1440" alt="Screenshot 2022-11-30 at 10 13 54" src="https://user-images.githubusercontent.com/108250116/204782963-d63cb397-f0b0-4481-b258-11bc056e1e85.png">
+
+<img width="1440" alt="Screenshot 2022-11-30 at 10 14 08" src="https://user-images.githubusercontent.com/108250116/204782983-38cd690e-4f49-4cce-8e23-b0393f63ccf9.png">
+
+
+
 ## Links
 
 Github URL: https://github.com/RahmaBilal/Timed-quiz
