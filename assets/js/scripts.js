@@ -207,4 +207,24 @@ class Game {
     this.showScoreForm(this.calculateFinalScore());
     this.timer = null;
   }
-  
+  showNextQuestion() {
+
+    const curQuestion = document.querySelector(
+      `.question-set-${this.question}`
+    );
+    const nextQuestion = document.querySelector(
+      `.question-set-${this.question + 1}`
+    );
+    const feedback = curQuestion.querySelector(".js-feedback");
+
+    feedback.innerHTML = "Correct! ✅";
+    curQuestion.style.pointerEvents = "none";
+
+    setTimeout(() => {
+      curQuestion.classList.toggle("active");
+      nextQuestion.classList.toggle("active");
+
+      this.question++;
+    }, 750);
+  }
+
