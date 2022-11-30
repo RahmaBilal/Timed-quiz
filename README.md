@@ -6,6 +6,19 @@ For this project, I have created an interactive code quiz with multiple question
 
 ---
 
+## Table of Contents 
+
+- [Description](#description)
+- [User Story](#user-story)
+- [What's included in this project](#whats-included-in-this-project)
+- [Tecnologies Used](#technologies-used)
+- [Screenshots](#screenshots)
+- [Links](#links)
+- [Questions](#questions)
+
+---
+
+
 ## User Story
 
 ```
