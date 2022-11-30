@@ -242,4 +242,22 @@ class Game {
     );
   }
 
-  
+  showIncorrect() {
+    const curQuestion = document.querySelector(
+      `.question-set-${this.question}`
+    );
+    const feedback = curQuestion.querySelector(".js-feedback");
+
+    feedback.innerHTML = "Incorrect! ❌";
+  }
+
+  verifyAnswer(questionNo, answer) {
+
+    if (
+      questions[questionNo].answer === questions[questionNo].options[answer]
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
