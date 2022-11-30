@@ -20,5 +20,14 @@ SO THAT I can gauge my progress compared to my peers
 - Correct/Incorrect answers
 - Polished and responsive UI
 
+### Technologies Used
+- HTML
+- CSS
+- JavaScript
+
 ## Screenshots
 
+## Links
+Github URL: https://github.com/RahmaBilal/Timed-quiz
+
+Deployed URL: 
