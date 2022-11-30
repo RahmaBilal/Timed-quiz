@@ -165,3 +165,39 @@ class Game {
       });
     })();
   }
+
+  addEvents() {
+    let questionsInputs = document.querySelectorAll(
+      "section input[type=radio]"
+    );
+
+    questionsInputs.forEach((question) => {
+      question.addEventListener(
+        "click",
+        ({ target }) => {
+          if (
+            this.verifyAnswer(
+              target.name.replace("question-", ""),
+              target.value
+            )
+          ) {
+
+
+            this.score++;
+
+            if (this.question === questions.length - 1) {
+              this.endQuiz();
+            } else {
+              this.showNextQuestion();
+            }
+          } else {
+
+            
+            this.showIncorrect();
+            this.timer.modifyTime(-10);
+          }
+        },
+        true
+      );
+    });
+  }
