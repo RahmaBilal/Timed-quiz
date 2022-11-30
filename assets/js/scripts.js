@@ -192,7 +192,7 @@ class Game {
             }
           } else {
 
-            
+
             this.showIncorrect();
             this.timer.modifyTime(-10);
           }
@@ -201,3 +201,10 @@ class Game {
       );
     });
   }
+
+  endQuiz() {
+    this.timer.end();
+    this.showScoreForm(this.calculateFinalScore());
+    this.timer = null;
+  }
+  
