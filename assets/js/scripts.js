@@ -281,3 +281,55 @@ class Game {
     return score;
   }
 }
+
+class HighScores {
+  static localStorageKey = "game-highscore";
+
+  static addScore(initials, score) {
+    let currentScores = this.getScores();
+    currentScores.push({ initials, score });
+    this.saveLeaderBoard(currentScores);
+  }
+
+  static getScores() {
+    let highScore = localStorage.getItem(this.localStorageKey);
+
+    if (highScore) {
+      return JSON.parse(highScore);
+    } else {
+      return [];
+    }
+  }
+
+  static saveLeaderBoard(scores) {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(scores));
+  }
+
+  static clear() {
+    localStorage.clear(this.localStorageKey);
+  }
+
+  static viewHighScores() {
+    let scores = this.getScores();
+    let template = `<ul>`;
+
+    scores.sort((score1, score2) => {
+      if (score1.score > score2.score) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
+
+    scores.forEach((entry) => {
+      template += `<li>${entry.initials} - ${entry.score}</li>`;
+    });
+
+    template += "</ul>";
+
+    document.querySelector("#leaderboard-section").classList.add("active");
+    document.querySelector("#leaderboard-section .highscores-list").innerHTML =
+      template;
+  }
+}
+
