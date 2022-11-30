@@ -103,3 +103,36 @@ class Game {
     document.querySelector("#intro").classList.remove("active");
     document.querySelector("#questions-section").classList.add("active");
   }
+  generateQuestions(random = false) {
+    let output = ``;
+
+    document.querySelector("#questions").innerHTML = "";
+
+    let questionsArray = random
+      ? questions.sort(() => Math.random() - 0.5)
+      : questions;
+
+    for (var key in questionsArray) {
+      let sectionClass = parseInt(key) === 0 ? "active" : "";
+      let answers = `<section class="question-set-${key} ${sectionClass}">
+                  <h2>${questionsArray[key].questionText}</h2>
+                  <ul class="questions-list" data-question-id="${key}">
+              `;
+
+      questionsArray[key].options.forEach((answer, i) => {
+        answers += `<li>
+                      <label>
+                          <input type="radio" name="question-${key}" value="${i}">
+                          <span>${answer}</span>
+                      </label>
+                  </li>`;
+      });
+
+      answers += `</ul><div class="js-feedback"></div></section>`;
+
+      output += answers;
+    }
+    document.querySelector("#questions").innerHTML = output;
+
+    this.addEvents();
+  }
