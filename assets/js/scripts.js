@@ -228,3 +228,18 @@ class Game {
     }, 750);
   }
 
+  showScoreForm(score) {
+    document.querySelector("#questions-section").classList.remove("active");
+    document.querySelector("#highscore-input").classList.add("active");
+
+    this.generateInputScreen(score);
+  }
+
+  calculateFinalScore() {
+    return (
+      this.score * 10 +
+      (this.timer.remainingTime < 0 ? 0 : this.timer.remainingTime)
+    );
+  }
+
+  
