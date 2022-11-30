@@ -2,8 +2,7 @@
 
 ## Description
 
-For this project, I have created an interactive code quiz with multiple questions. The application will run in the browser and features a dynamically uodated HTML and CSS powered by JavaScript code. 
-
+For this project, I have created an interactive code quiz with multiple questions. The application will run in the browser and features a dynamically updated HTML and CSS powered by JavaScript code.
 
 ## User Story
 
@@ -14,6 +13,7 @@ SO THAT I can gauge my progress compared to my peers
 ```
 
 ### What's included in this project
+
 - Multiple choice questions
 - Timer
 - Highscores
@@ -21,6 +21,7 @@ SO THAT I can gauge my progress compared to my peers
 - Polished and responsive UI
 
 ### Technologies Used
+
 - HTML
 - CSS
 - JavaScript
@@ -28,6 +29,7 @@ SO THAT I can gauge my progress compared to my peers
 ## Screenshots
 
 ## Links
+
 Github URL: https://github.com/RahmaBilal/Timed-quiz
 
-Deployed URL: 
+Deployed URL:
