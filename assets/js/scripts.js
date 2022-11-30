@@ -261,3 +261,23 @@ class Game {
       return false;
     }
   }
+  calculateResults() {
+    let questions = document.querySelectorAll(
+      "section input[type=radio]:checked"
+    );
+    let score = 0;
+
+    questions.forEach((question, index) => {
+      if (
+        this.verifyAnswer(
+          question.name.replace("question-", ""),
+          question.value
+        )
+      ) {
+        score = score + 10;
+      }
+    });
+
+    return score;
+  }
+}
